@@ -1,4 +1,4 @@
-package com.kneelawk.cmpdl2.curse.data
+package com.kneelawk.cmpdl2.data
 
 /**
  * Interface describing something that can be used as a file id.

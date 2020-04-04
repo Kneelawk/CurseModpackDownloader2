@@ -1,9 +1,9 @@
 package com.kneelawk.cmpdl2.tasks
 
-import com.kneelawk.cmpdl2.curse.data.AddonFile
-import com.kneelawk.cmpdl2.curse.data.MaybeAddonFile
-import com.kneelawk.cmpdl2.curse.data.manifest.FileData
-import com.kneelawk.cmpdl2.curse.data.manifest.ManifestData
+import com.kneelawk.cmpdl2.data.AddonFile
+import com.kneelawk.cmpdl2.data.MaybeAddonFile
+import com.kneelawk.cmpdl2.data.manifest.FileData
+import com.kneelawk.cmpdl2.data.manifest.ManifestData
 import javafx.application.Platform
 import javafx.beans.property.ReadOnlyIntegerProperty
 import javafx.collections.FXCollections

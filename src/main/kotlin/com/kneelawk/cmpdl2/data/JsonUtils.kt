@@ -1,4 +1,4 @@
-package com.kneelawk.cmpdl2.curse.data
+package com.kneelawk.cmpdl2.data
 
 import tornadofx.jsonArray
 import tornadofx.jsonObject

@@ -1,4 +1,4 @@
-package com.kneelawk.cmpdl2.curse.data.curseapi
+package com.kneelawk.cmpdl2.data.curseapi
 
 import tornadofx.JsonBuilder
 import java.time.LocalDateTime

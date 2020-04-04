@@ -1,7 +1,6 @@
-package com.kneelawk.cmpdl2.curse.data.manifest
+package com.kneelawk.cmpdl2.data.manifest
 
-import com.kneelawk.cmpdl2.curse.data.AddonId
-import com.kneelawk.cmpdl2.curse.data.MaybeAddonFile
+import com.kneelawk.cmpdl2.data.AddonId
 import tornadofx.JsonBuilder
 
 /**

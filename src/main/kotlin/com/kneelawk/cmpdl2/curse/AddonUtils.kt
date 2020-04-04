@@ -1,7 +1,7 @@
 package com.kneelawk.cmpdl2.curse
 
-import com.kneelawk.cmpdl2.curse.data.AddonId
-import com.kneelawk.cmpdl2.curse.data.curseapi.AddonFileJson
+import com.kneelawk.cmpdl2.data.AddonId
+import com.kneelawk.cmpdl2.data.curseapi.AddonFileJson
 import tornadofx.Controller
 import tornadofx.Rest
 import tornadofx.toModel

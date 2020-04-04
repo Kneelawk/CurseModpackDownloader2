@@ -1,6 +1,6 @@
-package com.kneelawk.cmpdl2.curse.data
+package com.kneelawk.cmpdl2.data
 
-import com.kneelawk.cmpdl2.curse.data.curseapi.AddonFileData
+import com.kneelawk.cmpdl2.data.curseapi.AddonFileData
 
 /**
  * Describes an addon file along with its project id.

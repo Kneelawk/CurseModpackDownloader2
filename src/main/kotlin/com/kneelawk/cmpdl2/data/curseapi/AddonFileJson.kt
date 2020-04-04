@@ -1,8 +1,8 @@
-package com.kneelawk.cmpdl2.curse.data.curseapi
+package com.kneelawk.cmpdl2.data.curseapi
 
-import com.kneelawk.cmpdl2.curse.data.reqJsonArray
-import com.kneelawk.cmpdl2.curse.data.reqLong
-import com.kneelawk.cmpdl2.curse.data.reqString
+import com.kneelawk.cmpdl2.data.reqJsonArray
+import com.kneelawk.cmpdl2.data.reqLong
+import com.kneelawk.cmpdl2.data.reqString
 import tornadofx.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter

@@ -1,6 +1,6 @@
 package com.kneelawk.cmpdl2.curse.modpack
 
-import com.kneelawk.cmpdl2.curse.data.manifest.ManifestJson
+import com.kneelawk.cmpdl2.data.manifest.ManifestJson
 import tornadofx.toModel
 import java.io.Closeable
 import java.io.IOException
@@ -48,13 +48,15 @@ class ModpackFile(modpack: Path) : Closeable {
     fun extractOverrides(toDir: Path) {
         val overrides = readOverrides()
 
-        Files.walk(overrides).forEach { from ->
-            val to = toDir.resolve(overrides.relativize(from).toString())
-            if (Files.isDirectory(from)) {
-                Files.createDirectories(to)
-            } else {
-                Files.createDirectories(to.parent)
-                Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING)
+        if (Files.exists(overrides)) {
+            Files.walk(overrides).forEach { from ->
+                val to = toDir.resolve(overrides.relativize(from).toString())
+                if (Files.isDirectory(from)) {
+                    Files.createDirectories(to)
+                } else {
+                    Files.createDirectories(to.parent)
+                    Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING)
+                }
             }
         }
     }

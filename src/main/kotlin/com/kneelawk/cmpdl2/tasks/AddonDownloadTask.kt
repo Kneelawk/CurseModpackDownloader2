@@ -1,9 +1,9 @@
 package com.kneelawk.cmpdl2.tasks
 
 import com.kneelawk.cmpdl2.curse.AddonUtils
-import com.kneelawk.cmpdl2.curse.data.AddonFile
-import com.kneelawk.cmpdl2.curse.data.AddonId
-import com.kneelawk.cmpdl2.curse.data.MaybeAddonFile
+import com.kneelawk.cmpdl2.data.AddonFile
+import com.kneelawk.cmpdl2.data.AddonId
+import com.kneelawk.cmpdl2.data.MaybeAddonFile
 import com.kneelawk.cmpdl2.util.ObjectPropertyWrapper
 import javafx.concurrent.Task
 import tornadofx.Rest

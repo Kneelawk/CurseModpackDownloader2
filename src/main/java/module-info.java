@@ -4,9 +4,9 @@
 module com.kneelawk.cmpdl2 {
     exports com.kneelawk.cmpdl2;
     exports com.kneelawk.cmpdl2.curse;
-    exports com.kneelawk.cmpdl2.curse.data;
-    exports com.kneelawk.cmpdl2.curse.data.curseapi;
-    exports com.kneelawk.cmpdl2.curse.data.manifest;
+    exports com.kneelawk.cmpdl2.data;
+    exports com.kneelawk.cmpdl2.data.curseapi;
+    exports com.kneelawk.cmpdl2.data.manifest;
     exports com.kneelawk.cmpdl2.curse.modpack;
     exports com.kneelawk.cmpdl2.net;
     exports com.kneelawk.cmpdl2.tasks;

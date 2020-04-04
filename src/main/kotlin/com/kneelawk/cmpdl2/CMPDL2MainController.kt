@@ -2,6 +2,7 @@ package com.kneelawk.cmpdl2
 
 import com.google.common.collect.ImmutableList
 import com.kneelawk.cmpdl2.curse.AddonUtils
+import com.kneelawk.cmpdl2.curse.ModLoaderDetector
 import com.kneelawk.cmpdl2.curse.XmlModpackUtils
 import com.kneelawk.cmpdl2.curse.modpack.ModpackFile
 import com.kneelawk.cmpdl2.tasks.AddonDownloadTask
@@ -34,6 +35,7 @@ class CMPDL2MainController : Controller() {
     val downloadTasks: ObservableList<ModDownloadTask> = FXCollections.observableArrayList()
 
     val xmlModpackUtils: XmlModpackUtils by inject()
+    val modLoaderDetector: ModLoaderDetector by inject()
 
     var previousDir = File(System.getProperty("user.home"))
 
@@ -117,6 +119,11 @@ class CMPDL2MainController : Controller() {
 
         val modpackFile = ModpackFile(modpackZip)
         val manifest = modpackFile.readManifest()
+
+        val modLoader = modLoaderDetector.detectModLoader(modpackFile)
+        runLater {
+            modLoaders.value = modLoader
+        }
 
         updateOverallStatus("Extracting overides...")
 

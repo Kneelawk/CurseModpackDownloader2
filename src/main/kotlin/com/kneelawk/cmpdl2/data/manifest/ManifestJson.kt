@@ -1,8 +1,8 @@
-package com.kneelawk.cmpdl2.curse.data.manifest
+package com.kneelawk.cmpdl2.data.manifest
 
-import com.kneelawk.cmpdl2.curse.data.reqJsonObject
-import com.kneelawk.cmpdl2.curse.data.reqLong
-import com.kneelawk.cmpdl2.curse.data.reqString
+import com.kneelawk.cmpdl2.data.reqJsonObject
+import com.kneelawk.cmpdl2.data.reqLong
+import com.kneelawk.cmpdl2.data.reqString
 import tornadofx.*
 import javax.json.JsonObject
 

@@ -1,8 +1,8 @@
 package com.kneelawk.cmpdl2.curse
 
-import com.kneelawk.cmpdl2.curse.data.AddonFile
-import com.kneelawk.cmpdl2.curse.data.AddonId
-import com.kneelawk.cmpdl2.curse.data.SimpleAddonId
+import com.kneelawk.cmpdl2.data.AddonFile
+import com.kneelawk.cmpdl2.data.AddonId
+import com.kneelawk.cmpdl2.data.SimpleAddonId
 import org.w3c.dom.Element
 import org.xml.sax.SAXException
 import tornadofx.Controller
