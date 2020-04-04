@@ -18,3 +18,6 @@ gradlew.bat jpackage
 ```
 
 Once this has finished, you should find the application bundle in the `build/jpackage` directory.
+
+## Screenshots
+![Application Screenshot](https://github.com/Kneelawk/CurseModpackDownloader2/raw/master/images/Screenshot.png)
