@@ -1,0 +1,314 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2019 Kneelawk
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+/*
+ * obsidian.css - This stylesheet is the core of the Obsidian Look And Feel.
+ */
+
+.root {
+    /*
+     * Obsidian Colors
+     */
+    -obsidian-background1-color: #3c3c3c;
+    -obsidian-background2-color: #505050;
+    -obsidian-background2-hover-color: #464646;
+    -obsidian-background2-disabled-color: #484848;
+    -obsidian-background3-color: #464646;
+
+    -obsidian-highlight-color: #3192bb;
+    -obsidian-select-color: #71abc6;
+
+    -obsidian-focus-color: #606060;
+
+    -obsidian-default-color: #71abc6;
+    -obsidian-default-focus-color: #8dcff1;
+    -obsidian-default-hover-color: #5d8ca3;
+
+    -obsidian-text-color: #dedede;
+
+    /*
+     * JavaFX settings
+     */
+    -fx-base: -obsidian-background1-color;
+    -fx-background: -obsidian-background1-color;
+    -fx-control-inner-background: -obsidian-background3-color;
+    -fx-font: 12px "Monospace";
+    -fx-text-fill: -obsidian-text-color;
+    -fx-text-inner-color: -obsidian-text-color;
+    -fx-padding: 20px;
+    -fx-border-style: none;
+    -fx-border-width: 0;
+    -fx-border-insets: 0;
+    -fx-focus-color: -obsidian-focus-color;
+    -fx-faint-focus-color: transparent;
+    -fx-accent: -obsidian-highlight-color;
+    -fx-disabled-opacity: 0.4;
+}
+
+/* Buttons */
+
+.button {
+    -fx-background-radius: 0;
+    -fx-background-color: -obsidian-background2-color;
+}
+
+.button:armed,
+.button:hover {
+    -fx-background-color: -obsidian-background2-hover-color;
+}
+
+.button:armed:default,
+.button:default:hover {
+    -fx-background-color: -obsidian-default-hover-color;
+}
+
+.button:armed:default:focused,
+.button:default:focused:hover {
+    -fx-background-color: -obsidian-default-focus-color, -obsidian-default-hover-color;
+    -fx-background-insets: 0, 1;
+}
+
+.button:armed:focused,
+.button:focused:hover {
+    -fx-background-color: -obsidian-focus-color, -obsidian-background2-hover-color;
+    -fx-background-insets: 0, 1;
+}
+
+.button:default {
+    -fx-background-color: -obsidian-default-color;
+}
+
+.button:default:focused {
+    -fx-background-color: -obsidian-default-focus-color, -obsidian-default-color;
+    -fx-background-insets: 0, 1;
+}
+
+.button:disabled {
+    -fx-opacity: -fx-disabled-opacity;
+}
+
+.button:focused {
+    -fx-background-color: -obsidian-focus-color, -obsidian-background2-color;
+    -fx-background-insets: 0, 1;
+}
+
+/* Progress Bars */
+
+.progress-bar {
+    -fx-background-radius: 0;
+}
+
+.progress-bar > .track {
+    -fx-background-radius: 0;
+    -fx-background-color: -obsidian-background2-color;
+}
+
+.progress-bar > .bar {
+    -fx-background-radius: 0;
+    -fx-background-color: -fx-accent;
+    -fx-background-insets: 0;
+}
+
+/* Scroll Bars */
+
+.scroll-bar,
+.scroll-bar:horizontal,
+.scroll-bar:vertical,
+.scroll-bar:horizontal:focused,
+.scroll-bar:vertical:focused {
+    -fx-border-color: -obsidian-background1-color;
+    -fx-border-width: 1;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-radius: 0;
+    -fx-background-color: -obsidian-background2-color;
+    -fx-background-insets: 0;
+    -fx-padding: 5;
+}
+
+.scroll-bar .increment-button:hover,
+.scroll-bar .decrement-button:hover {
+    -fx-background-color: -obsidian-background2-hover-color;
+}
+
+.scroll-bar .increment-button:focused,
+.scroll-bar .decrement-button:focused {
+    -fx-background-color: -obsidian-focus-color, -obsidian-background2-color;
+    -fx-background-insets: 0, 1;
+}
+
+.scroll-bar .increment-button:focused:hover,
+.scroll-bar .decrement-button:focused:hover {
+    -fx-background-color: -obsidian-focus-color, -obsidian-background2-hover-color;
+    -fx-background-insets: 0, 1;
+}
+
+.scroll-bar .track {
+    -fx-background-radius: 0;
+    -fx-background-color: -obsidian-background3-color;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+}
+
+.scroll-bar .thumb {
+    -fx-background-radius: 0;
+}
+
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: -obsidian-background1-color, -obsidian-background2-color;
+    -fx-background-insets: 0, 0 1 0 1;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: -obsidian-background1-color, -obsidian-background2-color;
+    -fx-background-insets: 0, 1 0 1 0;
+}
+
+.scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: -obsidian-background1-color, -obsidian-background2-hover-color;
+    -fx-background-insets: 0, 0 1 0 1;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: -obsidian-background1-color, -obsidian-background2-hover-color;
+    -fx-background-insets: 0, 1 0 1 0;
+}
+
+/* Spinners */
+
+.spinner {
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-background-radius: 0;
+    -fx-background-color: -obsidian-background2-color;
+    -fx-border-radius: 0;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-background-color: -obsidian-background2-hover-color;
+}
+
+.spinner:focused .increment-arrow-button {
+    -fx-background-color: -obsidian-focus-color, -obsidian-background2-color;
+    -fx-background-insets: 0 0 -1 0, 1 1 -1 0;
+    -fx-border-radius: 0;
+}
+
+.spinner:focused .decrement-arrow-button {
+    -fx-background-color: -obsidian-focus-color, -obsidian-background2-color;
+    -fx-background-insets: 0, 0 1 1 0;
+    -fx-border-radius: 0;
+}
+
+.spinner:focused > .text-field {
+    -fx-background-color: -obsidian-focus-color, -obsidian-background2-color;
+    -fx-background-insets: 0, 1 0 1 1;
+    -fx-border-radius: 0;
+}
+
+.spinner:focused .increment-arrow-button:hover {
+    -fx-background-color: -obsidian-focus-color, -obsidian-background2-hover-color;
+    -fx-background-insets: 0 0 -1 0, 1 1 -1 0;
+    -fx-border-radius: 0;
+}
+
+.spinner:focused .decrement-arrow-button:hover {
+    -fx-background-color: -obsidian-focus-color, -obsidian-background2-hover-color;
+    -fx-background-insets: 0, 0 1 1 0;
+    -fx-border-radius: 0;
+}
+
+.spinner:disabled .text-field {
+    -fx-opacity: 1;
+}
+
+/* TableViews */
+
+.list-view,
+.table-view {
+    -fx-background-radius: 0;
+    -fx-background-color: -obsidian-background3-color;
+    -fx-background-insets: 0;
+    -fx-padding: 0px;
+}
+
+.column-header-background {
+    -fx-background-radius: 0;
+    -fx-background-color: -obsidian-background2-color;
+}
+
+.column-header {
+    -fx-background-radius: 0;
+    -fx-background-color: -obsidian-background1-color, -obsidian-background2-color;
+    -fx-background-insets: 0, 0 1 1 0;
+}
+
+.list-view .filler,
+.table-view .filler {
+    -fx-background-radius: 0;
+    -fx-background-color: -obsidian-background1-color, -obsidian-background2-color;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+.list-cell,
+.table-row-cell {
+    -fx-background-radius: 0;
+    -fx-background-color: -obsidian-background1-color, -obsidian-background3-color;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+.list-cell:odd,
+.table-row-cell:odd {
+    -fx-background-color: -obsidian-background1-color, derive(-obsidian-background3-color, -5%);
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+.list-cell:selected,
+.table-row-cell:selected {
+    -fx-background-color: -obsidian-background1-color, -obsidian-select-color;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+/* Text Fields */
+
+.text-field {
+    -fx-background-radius: 0;
+    -fx-background-color: -obsidian-background2-color;
+    -fx-text-fill: -obsidian-text-color;
+    -fx-border-color: -obsidian-highlight-color;
+    -fx-border-width: 0 0 2 0;
+}
+
+.text-field:focused {
+    -fx-background-color: -obsidian-focus-color, -obsidian-background2-color;
+    -fx-background-insets: 0, 1;
+}

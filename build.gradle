@@ -8,11 +8,16 @@ plugins {
 group 'com.kneelawk'
 version '0.0.1-SNAPSHOT'
 
+sourceCompatibility = 14
+
 mainClassName = "$moduleName/com.kneelawk.cmpdl2.CMPDL2AppKt"
 
 project.ext.tornadofxVersion = '1.7.20'
 project.ext.jfxVersion = '14'
 project.ext.guavaVersion = '28.2-jre'
+
+// Future versions introduce a bug which breaks some url formatting
+project.ext.httpClientVersion = '4.5.6'
 
 switch (org.gradle.internal.os.OperatingSystem.current()) {
     case org.gradle.internal.os.OperatingSystem.LINUX:
@@ -32,8 +37,11 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
 
-    implementation "no.tornado:tornadofx:$tornadofxVersion"
+    implementation("no.tornado:tornadofx:$tornadofxVersion") {
+        exclude group: "org.jetbrains.kotlin"
+    }
     implementation "org.openjfx:javafx-base:$jfxVersion:$jfxPlatform"
     implementation "org.openjfx:javafx-controls:$jfxVersion:$jfxPlatform"
     implementation "org.openjfx:javafx-graphics:$jfxVersion:$jfxPlatform"
@@ -41,6 +49,8 @@ dependencies {
     implementation "org.openjfx:javafx-media:$jfxVersion:$jfxPlatform"
 
     implementation "com.google.guava:guava:$guavaVersion"
+
+    implementation "org.apache.httpcomponents:httpclient:$httpClientVersion"
 }
 
 run {
@@ -54,6 +64,12 @@ jlink {
     addExtraDependencies("javafx")
 
     options = ['--compress', '2', '--no-header-files', '--no-man-pages', '--add-modules', 'org.glassfish.java.json']
+
+    mergedModule {
+        additive = true
+        uses 'kotlin.reflect.jvm.internal.impl.resolve.ExternalOverridabilityCondition'
+        uses 'kotlin.reflect.jvm.internal.impl.util.ModuleVisibilityHelper'
+    }
 
     launcher {
         jvmArgs = ['--add-exports', 'javafx.graphics/com.sun.glass.ui=com.kneelawk.merged.module', '--add-opens', 'javafx.graphics/javafx.scene=com.kneelawk.merged.module']
