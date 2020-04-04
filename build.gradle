@@ -63,7 +63,7 @@ run {
 jlink {
     addExtraDependencies("javafx")
 
-    options = ['--compress', '2', '--no-header-files', '--no-man-pages', '--add-modules', 'org.glassfish.java.json']
+    options = ['--compress', '2', '--no-header-files', '--no-man-pages', '--add-modules', 'org.glassfish.java.json,jdk.crypto.cryptoki,jdk.zipfs']
 
     mergedModule {
         additive = true
